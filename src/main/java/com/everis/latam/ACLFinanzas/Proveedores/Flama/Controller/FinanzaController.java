@@ -74,9 +74,11 @@ public class FinanzaController {
 			res.setIdSolicitud(reqDto.getIdSolicitud());
 			res.setMontoTotal(reqDto.getMonto());
 			
-			log.info("Response = " +res);
+			log.info("Procedimiento correcto en FinanzaController, metodo: finanzasRequest");
+			log.info("Respuesta enviada = " +res);
 			return new ResponseEntity<>(res, HttpStatus.OK);
 		} catch (Exception e) {
+			log.info("Error en FinanzaController, metodo: finanzasRequest");
 			throw new BadRequestException(ExceptionPost.error);
 		}
 		
