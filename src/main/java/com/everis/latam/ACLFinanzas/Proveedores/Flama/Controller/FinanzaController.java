@@ -1,6 +1,9 @@
 package com.everis.latam.ACLFinanzas.Proveedores.Flama.Controller;
 
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Random;
 
 import org.springframework.http.HttpStatus;
 
@@ -53,11 +56,21 @@ public class FinanzaController {
 			
 			
 			//respuesta de prueba
-			Timestamp date = new Timestamp(0);			
-			Response res = new Response();
-			res.setEstatus("el medio estatus");
+			SimpleDateFormat sd = new SimpleDateFormat("yyyy-MM-dd");
+			Date date = new Date(System.currentTimeMillis());
+			
+			int min = 1;
+		    int max = 2000;
+		        
+		    //Generate random int value from 1 to 2000 
+		    System.out.println("Random value in int from "+min+" to "+max+ ":");
+		    int random_int = (int)Math.floor(Math.random()*(max-min+1)+min);
+		    
+			
+		    Response res = new Response();
+			res.setEstatus("3");
 			res.setFechaResolucion(date);
-			res.setIdResolucion(1257);
+			res.setIdResolucion(random_int);
 			res.setIdSolicitud(reqDto.getIdSolicitud());
 			res.setMontoTotal(reqDto.getMonto());
 			

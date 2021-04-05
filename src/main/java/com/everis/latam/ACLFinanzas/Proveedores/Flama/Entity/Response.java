@@ -1,6 +1,7 @@
 package com.everis.latam.ACLFinanzas.Proveedores.Flama.Entity;
 
-import java.sql.Timestamp;
+
+import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 
@@ -13,7 +14,7 @@ public class Response {
 	int montoTotal;
 	int idResolucion;
 	@JsonFormat(pattern="yyyy-MM-dd")
-	Timestamp fechaResolucion;
+	Date fechaResolucion;
 	int idSolicitud;
 }
 
